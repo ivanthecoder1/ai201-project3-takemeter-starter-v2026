@@ -51,62 +51,57 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+The classifier must achieve at least 0.75 accuracy on the held-out test set across all three random seeds.
 
+**Why this target:**
+
+Because TakeMeter has two labels, a random guesser would achieve around 0.50 accuracy on a balanced dataset. A target of 0.75 requires the classifier to learn meaningful differences between commentary and content-sharing posts while allowing for ambiguous Reddit posts.
+
+---
+
+## 2. Per-label performance
+
+The classifier must achieve an F1 score of at least 0.65 for each label (commentary and content_share) across all three seeds.
+
+**Why this target:**
+
+Both labels are important to the purpose of TakeMeter. A classifier that performs well on content-sharing posts but frequently misses commentary would not reliably distinguish the two types of posts. The 0.65 threshold allows for some ambiguity in posts that contain both shared content and personal opinions.
+
+---
+
+## 3. Balance
+
+The number of examples in the larger label must be no more than twice the number of examples in the smaller label in the training dataset.
 
 
 **Why this target:**
 
+If one label dominates the dataset, the classifier may learn to favor that label instead of recognizing meaningful differences between the two categories. Keeping the ratio at or below 2:1 helps ensure that the smaller category has enough examples to learn from. If the initial dataset exceeds this ratio, I will review the sampling and collect additional examples for the smaller label.
+
+---
+
+## 4. Labeling consistency
+
+A second person, working only from my label definitions and decision rule (not my labels), independently labels 30 posts. Their labels must match mine on at least 24 of the 30 (80%).
+
+The 30 posts are chosen at random from labels.csv, excluding the 20 cold-labeled posts, so the check is a separate sample. The second person labels from the post text alone and does not see my label or my note column.
+
+**Why this target:**
+
+The hardest boundary in my taxonomy is between commentary and content_share. Posts that include a trailer or announcement alongside a brief opinion may be read differently by different people. 80% agreement shows whether my definitions and decision rule are clear enough to apply consistently. With only 30 posts, one disagreement moves the score by about 3 points, so I treat the result as a rough signal rather than a precise measurement.
 
 
 ---
 
-## 2.
+## 5. Prediction confidence
 
-<!-- Your criterion. -->
-
-
+For each seed, among test-set predictions with a confidence score of at least 0.80, at least 85% must be correct. This applies only if the seed has at least 20 such predictions. If a seed has fewer than 20, [OPTION A / OPTION B below].
 
 **Why this target:**
 
-
-
----
-
-## 3.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
----
-
-## 4.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
----
-
-## 5.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
+Posts that clearly express an opinion or simply share a link should be easier to classify than posts that mix both behaviors, so high-confidence predictions should be more reliable. This criterion checks whether the model's confidence is useful, rather than allowing confident mistakes on ambiguous posts. The 20-prediction minimum exists because with a test set of roughly 30 posts, a handful of errors could swing the percentage too much to mean anything.
 
 
 ---

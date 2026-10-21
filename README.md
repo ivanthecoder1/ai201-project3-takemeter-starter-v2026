@@ -48,40 +48,50 @@
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+### `commentary`
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
-
-### `label_one`
-
-**Definition:**
+**Definition:** Posts where the author adds their own thoughts, opinions, analysis, or personal experience about a gaming-related topic, beyond simply sharing content.
 
 **Example 1:**
+> I want to get my wife into gaming but I don't know how
 >
+> My wife told me she wants to try my hobbies and I let her. Unfortunately, most of my games are either 1st or 3rd person. She had a hard time navigating, I tried teaching her but it's difficult since she's trying for the first time. Any recommendations on the best games to try first for those who had this small problem?
 
 **Example 2:**
+> Older gamers, what was the first video game you remember making your jaw drop, visually??
 >
+> We were a intellivision family when I was real young and they were nice, but you really had to stretch your imagination.
+> For me, Castlevania on the NES was just, jaw dropping.
+> (Same with Castlevania IV on the SNES which was the first SNES game I ever tried)
+> Sure, it was so hard I didn't get too far but it looked amazing !
 
-### `label_two`
+### `content_share`
 
-**Definition:**
+**Definition:** Posts that primarily share gaming-related content, such as trailers, announcements, news, screenshots, or links, with little or no additional explanation or personal commentary from the author.
 
 **Example 1:**
->
+> Grand Theft Auto 6 Launch Trailer
 
 **Example 2:**
+> Crimson Desert Enhanced: Charting the Unknown features trailer
 >
+> Some of the bigger things in the trailer:
+>
+> They appear to have added black flag style ship combat and underwater exploration but with the ability to use various mounts underwater like a submersible or hitching a ride on a killer whale. You can also design the ship itself.
+>
+> There's a sims-like building editor where you can design your own place or business.
+>
+> You can now micromanage the businesses you set up at captured outposts. Design the shop layout and also what to sell and for how much.
+>
+> You can now marry various NPCs and this apparently has an effect on your greymane camp
+>
+> There's now an area where you can do a boss rush of bosses you've cleared already for various rewards.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `commentary` vs. `content_share`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
-
+**The decision rule I used every time:** If the author adds a meaningful personal opinion, explanation, or analysis beyond the shared content, label the post `commentary`. If the post mainly shares information or media without adding a meaningful perspective, label it `content_share`. A short title or a basic description of the shared content does not count as commentary by itself.
 
 
 ---

@@ -39,10 +39,7 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
-
-
+TakeMeter is a text classifier that analyzes public posts from the r/gaming subreddit. It sorts posts into two categories: commentary and content_share. The commentary label is for posts that include meaningful personal opinions, explanations, analysis, or experiences, while content_share is for posts that mainly share gaming-related news, trailers, announcements, images, or links with little additional commentary. The goal is to distinguish posts that add the author's perspective from posts that primarily share content.
 
 ---
 
@@ -94,95 +91,77 @@
 **The decision rule I used every time:** If the author adds a meaningful personal opinion, explanation, or analysis beyond the shared content, label the post `commentary`. If the post mainly shares information or media without adding a meaningful perspective, label it `content_share`. A short title or a basic description of the shared content does not count as commentary by itself.
 
 
----
-
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
+**Where the posts came from:** r/gaming, a public subreddit, with no login needed. The first 20 posts were copied by hand from the hot feed. The rest came from a CSV export of the new feed, a scrape tool, covering Oct 19–21, 2026. Each row is the post title plus body text. I skipped image-only posts whose titles meant nothing without the image, automated weekly mod threads, and a few very long article reposts.
 
-**Where the posts came from:**
+**How I labelled them:** I labelled the first 20 posts cold, with no tools or help. They are marked `cold` in the note column. The remaining rows were pre-labelled by Claude from my definitions and decision rule, and are marked `pre-labeled`. I then read every row and corrected 10 of them. 
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
-
-**Counts per label:**
+**Counts per label:** [update if you add rows or relabel]
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| commentary | 87 | 62.6% |
+| content_share | 52 | 37.4% |
+| **Total** | 139 | 100% |
+
+I have 139 rows rather than 200 because of time constraints.
 
 **Three hard cases**
 
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
-
 **1.**
-> *The post:*
+> *The post:* Crimson Desert Enhanced: Charting the Unknown features trailer. Some of the bigger things in the trailer: They appear to have added black flag style ship combat and underwater exploration […] There's now an area where you can do a boss rush of bosses you've cleared already for various rewards.
 >
-> *Could have been:*
+> *Could have been:* commentary
 >
-> *I chose, because:*
+> *I chose, because:* content_share. It is long and written by the poster, which makes it look like commentary. But it only summarizes what the trailer shows, with no opinion, feeling, reason or experience from the author. Under my rule that is content_share.
 
 **2.**
-> *The post:*
+> *The post:* A new report, which interviewed 101 leaders from studios across North America and Europe, found that 94% said their studios use AI at some stage in development but more than half said it isn't deeply embedded into their production pipeline. Of note: This research was done by VAIA, who appear overtly pro-AI in their report.
 >
-> *Could have been:*
+> *Could have been:* content_share
 >
-> *I chose, because:*
+> *I chose, because:* commentary. The title is a news statistic, but the poster's "Of note" line adds their own critical judgment of the source. 
 
 **3.**
-> *The post:*
+> *The post:* The Finals - Season 12 | Prime Time. The Finals just Updated to Season 12 Today! It is probably the only FPS I play these days.
 >
-> *Could have been:*
+> *Could have been:* content_share
 >
-> *I chose, because:*
+> *I chose, because:* commentary. The post is a trailer link, but the poster states a personal experience in their own words ("the only FPS I play these days"). My rule says that makes it commentary even when a trailer is attached. 
 
 ---
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
+**Base model:** 2.14.1+cpu
 
-**Base model:**
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, max length 128 tokens, seed 42. Trained on CPU (torch 2.14.1+cpu).
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Anything I changed from the defaults, and why:** Nothing. I used the defaults.
 
-**Anything I changed from the defaults, and why:**
-
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
-
-
+**Split sizes:** [update if you rerun] 97 train / 21 val / 21 test (70/15/15, stratified). Test split: 13 commentary, 8 content_share. `content_share` has 8 test examples, which is thin, so its metrics will move a lot between seeds.
 
 ---
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
+**Moment 1: pre-labelling the scraped posts**
 
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
+- *What I asked for:* I gave Claude my two label definitions and decision rule, plus a CSV export of r/gaming posts (title and body), and asked it to pre-label them in `text,label,note` format.
+- *What came back:* 120 labelled rows, with 9 flagged as hard cases. Claude also flagged judgment calls, such as pure questions going to `commentary` and short opinion-bearing titles going to `commentary`.
+- *What I changed:* I relabelled about 20 rows
 
-**Moment 1**
+**Moment 2: cleaning, formatting and consistency checks**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Help turning pasted Reddit posts into a clean CSV, and a check on my criteria and labels.
+- *What came back:* Cleaned rows with the page chrome removed, line breaks flattened and quotes escaped. Claude also pointed out that my labels didn't always follow my own decision rule (The Finals, Dragon Quest) and that my criteria had a weak baseline argument.
+- *What I changed:* I relabelled The Finals, rewrote criteria 4 and 5 so a stranger could check them
 
-**Moment 2**
+**Pre-labelling disclosure:** About 130 rows were pre-labelled by Claude and are marked `pre-labeled` in the note column. I labelled the 20 `cold` rows myself with no help. I read and corrected every pre-labelled row.
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** About 119 rows were pre-labelled by Claude and are marked `pre-labeled` in the note column. I labelled the 20 `cold` rows myself with no help. I read and corrected every pre-labelled row.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 

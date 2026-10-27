@@ -5,6 +5,5 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+commentary: Posts where the author adds their own thoughts, opinions, analysis, or personal experience about a gaming-related topic, beyond simply sharing content.
+content_share: Posts that primarily share gaming-related content, such as trailers, announcements, news, screenshots, or links, with little or no additional explanation or personal commentary from the author.

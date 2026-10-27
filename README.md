@@ -172,25 +172,17 @@ I have 139 rows rather than 200 because of time constraints.
 
 ## Baseline vs. Trained
 
-<!-- Both models on the same posts. `python baseline.py --trained results.json`
-     prints this table for you. -->
-
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.619 | 0.619 | +0.000 |
+| Macro F1 | 0.382 | 0.382 | -0.000 |
+| F1 — `commentary` | 0.765 | 0.765 | -0.000 |
+| F1 — `content_share` | 0.000 | 0.000 | +0.000 |
 
-**What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
-
-**What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
+**What I predicted before I looked: my expectation was that the trained model would beat the baseline on `content_share`. It did not.**
 
 
+**What the gap actually means: There is no gap. Both models predicted `commentary` for all 21 test posts, so both score 13/21 = 0.619 accuracy and 0.000 F1 on `content_share`. Fine-tuning on my rows added nothing over a general model on this test set.**
 
 ---
 

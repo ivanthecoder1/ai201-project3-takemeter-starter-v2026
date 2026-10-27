@@ -1,0 +1,133 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 21,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 21,
+    "accuracy": 0.6190476190476191,
+    "f1_macro": 0.3823529411764706,
+    "per_label": {
+      "commentary": {
+        "precision": 0.6190476190476191,
+        "recall": 1.0,
+        "f1": 0.7647058823529412,
+        "support": 13
+      },
+      "content_share": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 8
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "DeadRoot Official Gameplay Trailer",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Any good road trip/driving games where you actually have a destination? I'm looking for some new or upcoming singleplayer road trip/driving games. I'm not really into games with procedurally generated roads and endless driving with no real destination. I find that kind of gameplay gets boring after a while. I'd rather play a game where you drive from one place to another and actually have a destination to reach, with a proper ending to the journey. I don't mind doing other stuff along the way, like exploring, completing side activities, or whatever else the game has to offer. So far, I've found a few games that seem interesting, like Over the Hill, Wanderer Wheels, and Outbound. Outbound doesn't seem to have a specific destination, but I like that its world isn't procedurally generated. I've also played truck games like Euro Truck Simulator, but are there any games that focus more on the road trip vibe? I'd actually prefer a more linear game over an open-world one, by the way.",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Games for terrible bastards 2026. Hi. I am a fan of hardcore PVP douchebag games. Games like Rust, Ark, Atlas, Eve Online, Albion Online... those kinds of games. Games where you can meet a new friend, play him for a few minutes, and stab him in the back and take his stuff. Games with high stakes, high risk, high reward, and unfair play. But there's a problem. All those games I just listed. Rust Ark Atlas Eve Online Albion Online They're all old as hell. Old as hell. Where are the new games, for a new generation of terrible douches? Where are the new games, filled with new victims, new douchebag mechanics, new stuff to steal and lose? Where are the next generation games for terrible bastards? I know of a few... Star Citizen (I just reviewed it, and gave it a 3.4, I'm looking for something that isn't eternally broken run by a company that just pours money into social media management) Dune something or other, but I heard that if failed Mortal Online 2 - I played it, and I liked it, but I think my time with it has passed Anything else out there? Preferably something with some serious money poured into it? I'd like a relatively polished and bug free game if I can get it after spending time with the buggiest game that has ever released. There's gotta be new stuff out there right? Either just released, or going into alpha... there has to be some gem out there that wants to push the terrible bastard genre further...",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Edge Of Memories Has Been Delayed to Dec 3rd",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Crimson Desert Enhanced: Charting the Unknown features trailer Some of the bigger things in the trailer: They appear to have added black flag style ship combat and underwater exploration but with the ability to use various mounts underwater like a submersible or hitching a ride on a killer whale. You can also design the ship itself. There's a sims-like building editor where you can design your own place or business. You can now micromanage the businesses you set up at captured outposts. Design the shop layout and also what to sell and for how much. You can now marry various NPCs and this apparently has an effect on your greymane camp. There's now an area where you can do a boss rush of bosses you've cleared already for various rewards.",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Regarding Xbox - Big Walk by House House",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "OPINION: Developers should downgrade graphics back to 2015 - 2018. The hyperfixation in game ever more realistic graphics is increasing development costs over the skies, when there's not even a significant gain in game quality at all. More than that, we've actually been seeing huge losses in game density and performance. There's also something weird about ultra realistic games, when they lose that \"3D modelled\" appearance and just become close to photorrealism. It feels off. 2015 - 2018 IMO was the peak of graphics, with different arts too: Batman Arkham Knight, The Witcher 3, Red Dead Redemption 2 and Metal Gear Solid V. All of them have totally different art styles, and yet they're all realistic and beautiful enough, without compromising the feeling of it still being a game. I see no problem in backtracking what was good and using some of these resources to add depth/content to games. It's just my opinion though, no need to get all sensible about it. I still like realistic graphics in some games, but it's becoming quite difficult to find companies that manage to create both realism (to modern standards) and quality in AAA games.",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Back when everyone called the hadoken the \"fireball\" Remember back before all the japanimation was popular, when all we had to go by in figuring out how video games worked was U.S. martial arts movies and shows? Back then, Ryo threw fireballs. Really HOT ones too, because they were blue! It was some kind of karate magic spell cast by saying the magic word \"hadoken\", because they were fighting wizards. It was just like Mario eating a magic flower and throwing his own fireballs. Ninjas using magic? That's weird. Why would a ninja use magic? They're batmans. They use sleight of hand and trickery that just LOOKS like magic! Smoke bombs and some kind of device that's just a flame thrower. That's what the Ninja Gaiden guy's doing! Hey, what's with the dungeons & dragons art in this game Dragon Warrior? It's kind of cool, but this game's lame. How do I shoot action missiles when I gotta just pick menu options to do stuff? Wait I'm already out of fireballs? This is as bad as Ultima! Oh it's Mega Man! He's a robot that gets copies of weapons! Dr. Light's so smart making those copies for him after looking at his recordings. Heheh, his real name's Rock and his sister's name is Roll, like Rock & Roll! Super Mario Bros 3 is so weird and funny! I got a frog suit and the racoon power and something called a tanooki. I don't know what that is, but it's like a big bear thing that can turn into a statue with magic. Edit: To clarify a few things, I wanted to get across the \"spirit\" of this post. I'm not attacking anyone or anything. I'm wistfully nostalgic about the silly misunderstandings me and kids like me had growing up and first interacting with all these new concepts, and I'm hoping to open the floor to other's misunderstandings they had growing up as well.",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "May The Revolution Begin - Arc Raiders Took this picture using the in-game camera, turned out almost like a loading screen. Very proud.",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "The Ecco The Dolphin Website now has a countdown with 24 Hours and 26 minutes (at the time of writing)",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Games that are more fun on a second playthrough As the title says, have you found a game more enjoyable on a second playthrough? For me, most Metroidvanias I play are more enjoyable on a second playthrough because I know where everything is, so I can optimize my run to progress the way I want to. Nowhere is that more true than Silksong. I played the game on release, wanting to be as spoiler free as possible. However, the unexpected (and sometimes unfair) difficulty wore me down a lot. The learning process just wasn\u2019t fun. On subsequent playthroughs, I now know what to expect and I know exactly where to go to play as much as I want with the crests and upgrades I want. It made the experience much more enjoyable to me (Bilewater still sucks though. Not because of the maggots, but because of the randomized enemy spawns that you can\u2019t plan around).",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "What's your favorite challenge run to make an older game you've beat a bunch interesting? I'm a systems administrator (IT), so we spend a lot of time just sitting around making sure nothing breaks, think Gordon from IT Crowd but we do know what the lights mean. In order to not die of boredom, I play games on my switch (and am on reddit). I've started installing older games on it and decided I would do \"challenge\" runs where I impose a restriction on myself. Right now I've got two: Pokemon LeafGreen: Only bug pokemon. I did have to cheat on this and get a Rhydon because you literally cannot beat your rival once they get a Pidgeot and Charizard with just bug Pok\u00e9mon. Final Fantasy VII: Only Magic & Limit Breaks. No Attack or Summons",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Knuckle Creek Official release date trailer (sing a long version)",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Older gamers, what was the first video game you remember making your jaw drop, visually?? We were a intellivision family when I was real young and they were nice, but you really had to stretch your imagination. For me, Castlevania on the NES was just, jaw dropping. (Same with Castlevania IV on the SNES which was the first SNES game I ever tried) Sure, it was so hard I didn't get too far but it looked amazing !",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "What unassuming game has surprisingly deep lore? We all know stuff like The Witcher, Knights Of The Old Republic, Dragon Age, Elder Scrolls games, etc have tons of lore, but what about the more unassuming games? I feel like the posterboy for this would be something like Hollow Knight, but I would love to hear others as well. The smaller/more unassuming the better!",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "How the soundtrack of Arc Raiders was made",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "With Call Of Duty Release Near And No Union Contract In Sight, Activision Workers Authorize Strike",
+      "gold": "content_share",
+      "predicted": "commentary"
+    },
+    {
+      "text": "\"So, how bad can Resident Evil 5 and 6 really be? \" That's a question I'd asked myself last year when the bundle was super cheap on sale. Come to find out, they're pretty bad. Could be I'm getting long in the tooth, could be that I'm way too used to modern games (re remakes especially), but i just cannot get along with these games. I played the OG RE 4 on Gamecube a lifetime ago. Figured i could get used to the RE 5 controls. Turns out I can't go back. This is my second time trying it and i basically hate it. Okay, no big. I'll try RE 6. I thought this one would be more comfort. You can move while aiming, albeit pretty slow. Not that dissimilar from the remakes, right? I'll get used to it. Nope. The gank squads repeatedly mess me up and the controls/ movement just don't feel right. They're floaty or something? Hard to describe, but maybe \"old \" is the most applicable word. Then there's the crap checkpoint system. Thought you could exit after that fight you barely escaped alive? WRONG! Gotta do it all over again next time you fire it up. I don't feel too burned (as i said, they were dirt cheap), but i am a little bummed; it's spooky season and all that. Maybe I just don't like the way older games feel. Oh well. Can't win them all, right?",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Which developer has good game after good game? IMO Ndemic Creations games are all pretty good, plague inc, rebel inc, and After inc are all fun if you like that genre (After inc does diverge from the tech tree style) CDPR, other than the launch of Cyberpunk 2077 (don\u2019t shorten Cyberpunk Hank) I don\u2019t think they have made a bad game especially in recent history, plus GOG is goated (now not owned by CDPR but still, the founder owns it) Edit: more about them still making good games or haven\u2019t had a recent spell of mediocre to bad like Ubisoft",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "Games similar to Viva Pi\u00f1ata? I\u2019m trying to recapture some of the magic I felt with certain games I enjoyed when I was younger. For some reason, Viva Pi\u00f1ata is one of those games - is there anything similar out there? I\u2019ve heard Pokopia is maybe what I\u2019m looking for, but I don\u2019t have a Switch 2 (yet). Any suggestions are appreciated!",
+      "gold": "commentary",
+      "predicted": "commentary"
+    },
+    {
+      "text": "My dumb opinion but digital gaming wouldn't be viewed as negatively if we actually had ownership and wasn't at risk of being removed. The one main argument left would be selling or trading the copies. I have more potentially dumb opinions, like when refunding games via steam for example, id be ok with getting reduced refunds after 2 hours, so instead of a full refund it goes down progressively as you clock in more hours but after a certain amount, no refunds. Im rambling now, enjoy your day.",
+      "gold": "commentary",
+      "predicted": "commentary"
+    }
+  ]
+}

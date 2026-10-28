@@ -188,34 +188,37 @@ I have 139 rows rather than 200 because of time constraints.
 
 ## Run Log — Before
 
-<!-- Five criteria across three seeds. The notebook's section 6 prints the
-     spread table; the Target and Verdict columns are yours. -->
+Device: cpu (torch 2.14.1+cpu). Base model: distilbert-base-uncased. 139 rows in labels.csv, split 70/15/15 per seed. Seeds 42, 7 and 2024. Each seed has a different 21-post test split.
+
+### Criteria across three seeds
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.75 on every seed | 0.619 | 0.667 | 0.857 | MISSED |
+| 2. F1 per label | ≥ 0.65 for each label on every seed | commentary 0.765, content_share 0.000 | commentary 0.788, content_share 0.222 | commentary 0.897, content_share 0.769 | MISSED |
+| 3. Balance | larger label ≤ 2× smaller in training data | 61 vs 36 (1.69×) | 61 vs 36 (1.69×) | 61 vs 36 (1.69×) | MET |
+| 4. Labeling consistency | ≥ 24 of 30 agree with a second person | not measured yet | | | N/A |
+| 5. Confidence | ≥ 85% correct among predictions with confidence ≥ 0.80, if ≥ 20 such predictions | fewer than 20 | fewer than 20 | fewer than 20 | Missed |
 
-### Confusion matrix
+### Spread across seeds
 
-<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
-     An image of a matrix earns nothing. -->
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.619 | 0.667 | 0.857 | 0.238 |
+| Macro F1 | 0.382 | 0.505 | 0.833 | 0.451 |
+| F1 — `commentary` | 0.765 | 0.788 | 0.897 | 0.132 |
+| F1 — `content_share` | 0.000 | 0.222 | 0.769 | 0.769 |
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+Accuracy moved 0.238 across seeds, about 24 points and well over the 10-point threshold. The test set is only 21 posts, so one post is about 4.8 points, and seed 42 to seed 2024 is a difference of 5 posts (13 vs 18 correct). My measure of the model is unstable at this dataset size. Seed 42 collapsed to predicting `commentary` for every post, seed 7 only barely predicts `content_share`, and seed 2024 learns the boundary reasonably well.
 
-**My biggest off-diagonal number, and what it means:**
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
+### Confusion matrix (seed 42)
 
+| true \ predicted | commentary | content_share |
+|---|---|---|
+| **commentary** | 13 | 0 |
+| **content_share** | 8 | 0 |
 
+**My biggest off-diagonal number, and what it means:** All 8 real `content_share` posts in the seed-42 test split were called `commentary`, and none of the 13 real `commentary` posts went the other way. On this split the model never predicted `content_share`, so it did not learn the `commentary` vs. `content_share` boundary at all. Other seeds do better, so the cause is not simply the labels. I'll look at my agreement check and the thin `content_share` class (52 of 139 rows) when diagnosing it.
 
 ---
 
